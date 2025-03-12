@@ -1,18 +1,150 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>joyful-giving-platform</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation | Client-Side</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-card">
+      <div class="form-header">
+        <span class="chip">Personal Information</span>
+        <h1>Registration Form</h1>
+      </div>
+      
+      <form id="validationForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <div class="input-container">
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+              />
+            </div>
+            <span class="error-message" id="firstNameError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <div class="input-container">
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+              />
+            </div>
+            <span class="error-message" id="lastNameError"></span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="birthDate">Birth Date</label>
+          <div class="input-container">
+            <input
+              type="date"
+              id="birthDate"
+              name="birthDate"
+            />
+          </div>
+          <span class="error-message" id="birthDateError"></span>
+        </div>
+        
+        <div class="form-group">
+          <label>Hobbies</label>
+          <div class="hobbies-container" id="hobbiesContainer">
+            <div class="hobby-option">
+              <input 
+                type="checkbox" 
+                id="drawing" 
+                name="hobbies" 
+                value="Drawing"
+              />
+              <label for="drawing">Drawing</label>
+            </div>
+            
+            <div class="hobby-option">
+              <input 
+                type="checkbox" 
+                id="singing" 
+                name="hobbies" 
+                value="Singing"
+              />
+              <label for="singing">Singing</label>
+            </div>
+            
+            <div class="hobby-option">
+              <input 
+                type="checkbox" 
+                id="dancing" 
+                name="hobbies" 
+                value="Dancing"
+              />
+              <label for="dancing">Dancing</label>
+            </div>
+            
+            <div class="hobby-option">
+              <input 
+                type="checkbox" 
+                id="other" 
+                name="hobbies" 
+                value="Other"
+              />
+              <label for="other">Other</label>
+            </div>
+            
+            <div id="otherHobbyContainer" style="display: none; width: 100%;">
+              <input
+                type="text"
+                id="otherHobby"
+                name="otherHobby"
+                placeholder="Specify other hobby"
+                class="other-hobby"
+              />
+            </div>
+          </div>
+          <span class="error-message" id="hobbiesError"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-container">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+            />
+          </div>
+          <span class="error-message" id="emailError"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="note">Note</label>
+          <div class="input-container">
+            <textarea
+              id="note"
+              name="note"
+              placeholder="Add any additional information"
+              rows="4"
+            ></textarea>
+          </div>
+          <span class="error-message" id="noteError"></span>
+        </div>
+        
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+      
+      <div id="responseMessage" class="response-message"></div>
+    </div>
+  </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
